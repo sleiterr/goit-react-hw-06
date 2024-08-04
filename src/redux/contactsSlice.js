@@ -1,24 +1,34 @@
-// contactsSlice.js
+// src/redux/contactsSlice.js
 
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 
+// Налаштування адаптера сутності
+const contactsAdapter = createEntityAdapter({
+  selectId: (contact) => contact.id,
+});
+
+// Ініціалізація стану
+const initialState = contactsAdapter.getInitialState();
+
+// Створення слайсу
 const contactsSlice = createSlice({
   name: "contacts",
-  initialState: {
-    items: [],
-  },
+  initialState,
   reducers: {
-    addContact(state, action) {
-      state.items.push(action.payload);
-    },
-    deleteContact(state, action) {
-      state.items = state.items.filter(
-        (contact) => contact.id !== action.payload
-      );
-    },
+    addContact: contactsAdapter.addOne,
+    deleteContact: contactsAdapter.removeOne,
   },
 });
 
 export const { addContact, deleteContact } = contactsSlice.actions;
-export const selectContacts = (state) => state.contacts.items;
+
+// Генерація селекторів
+export const {
+  selectById: selectContactById,
+  selectIds: selectContactIds,
+  selectEntities: selectContactEntities,
+  selectAll: selectAllContacts,
+  selectTotal: selectTotalContacts,
+} = contactsAdapter.getSelectors((state) => state.contacts);
+
 export default contactsSlice.reducer;

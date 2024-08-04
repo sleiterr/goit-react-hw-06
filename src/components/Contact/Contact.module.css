@@ -1,0 +1,36 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  background-color: #f9f9f9;
+  max-width: 600px;
+  margin: 0 auto 10px;
+}
+
+.item p {
+  margin: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3cc5e7;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c0732b;
+
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.5);
+}
