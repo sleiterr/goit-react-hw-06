@@ -30,20 +30,19 @@ Vite: As a build and development tool.
 Project Structure:
 
 src/
-│
-├── components/
-│   ├── ContactForm/          - Component for adding contacts.
-│   ├── ContactList/          - Component for displaying the list of contacts.
-│   ├── SearchBox/            - Component for filtering contacts.
-│   └── Contact/              - Directory containing components related to contact management.
-│
-├── redux/
-│   ├── contactsSlice.js      - Redux slice for managing contacts.
-│   ├── filtersSlice.js       - Redux slice for managing filters.
-│   ├── persistConfig.js      - Configuration file for Redux Persist.
-│   └── store.js              - Store configuration file.
-│
-└── App.jsx                   - Main application component.
+components/
+ContactForm/          - Component for adding contacts.
+ContactList/          - Component for displaying the list of contacts.
+SearchBox/            - Component for filtering contacts.
+Contact/              - Directory containing components related to contact management.
+
+redux/
+contactsSlice.js      - Redux slice for managing contacts.
+filtersSlice.js       - Redux slice for managing filters.
+persistConfig.js      - Configuration file for Redux Persist.
+store.js              - Store configuration file.
+
+App.jsx               - Main application component.
 
 Dependencies:
 
